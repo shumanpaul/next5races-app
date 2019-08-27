@@ -11,6 +11,15 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 3. Navigate to http://localhost:4200 in the browser.
 4. Implementaion screenhot is also provided.
 
+## To improve on
+* Name should be refactored to NextRacesApp as no. of races being displayed is determined by no. of races sent back by API
+* Use proper SVG instead of JPG files and register with Material Design
+* Implement Routing and move the nextrace implementaion to its own component
+* Implement Home Landing Page and Nrowsin
+* Implement Breadcrumbs
+* Check if multiple calls to refresh data from API leads to memory leak and unsubsrbie if required.
+* Move constants to a coonfig file like URL, Race Types ENUM.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
