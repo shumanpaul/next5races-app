@@ -2,6 +2,14 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.1.
 
+## To run the Angular app
+
+1. Open folder **next5races-app** in VSCode.
+2. Open a Terminal from Menu Item View->Terminal: 
+    *   npm install 
+    *   ng serve
+3. Navigate to http://localhost:4200 in the browser.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

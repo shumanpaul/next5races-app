@@ -32,7 +32,7 @@ export class AppComponent {
 
   // Method to fetch data
   refreshData() {
-    // load next5races
+    // load next list of races
   this.beteasyapi.getNextToJump().subscribe(
     (data) => {this.nextRaces = data.result;
                this.noOfNextRaces = this.nextRaces.length; });
