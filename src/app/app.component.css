@@ -1,0 +1,27 @@
+.spacer {
+    flex: 1 1 auto;
+  }
+
+  .next-item-sub-list .mat-list-item {
+    height: auto;
+  }
+
+  .event-name {
+    color:darkblue; 
+    font-weight: bold; 
+    font-family: 'Times New Roman';
+    padding: 3px 3px 3x 3px;
+}
+
+.venue {
+    color: grey; 
+    font-weight: normal; 
+    font-family: 'Courier New';
+    padding: 3px 3px 3x 3px;
+}
+.advertised-start-time {
+    color:red; 
+    font-weight: bold; 
+    font-family: 'Times New Roman';
+    padding: 3px 3px 3x 3px;
+}

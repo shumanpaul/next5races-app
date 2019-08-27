@@ -26,7 +26,7 @@ export class AppComponent {
     // Set interval to fetch data every 60 seconds
     this.interval = setInterval(() => {
       this.refreshData();
-    }, 5 * 1000);
+    }, 60 * 1000);
 
   }
 

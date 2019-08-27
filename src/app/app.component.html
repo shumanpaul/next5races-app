@@ -1,37 +1,64 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <mat-toolbar color="primary">
-  <button mat-button ><mat-icon>menu</mat-icon></button>
-  <span class="example-spacer"></span>
-  <!-- Get number of races being shown to display -->
-  <span>Showing Next {{nextRaces.length}} Races </span>  
-  <span class="example-spacer"></span>
-  <button mat-button ><mat-icon>settings</mat-icon></button>
-</mat-toolbar>
-
-<mat-list class="app-class"> 
-  <mat-list-item *ngFor="let nextRace of nextRaces">     
-      
-      <mat-list dense>
-        <mat-list-item>
-           <div class="event-name">
-            {{nextRace.EventName}}
+    <button mat-button (click)="sidenav.open ()" >
+       <mat-icon>menu</mat-icon>
+    </button>
+    <img src="../assets/images/beteasylogo.JPG">
+    <span class="spacer"></span>
+    <!-- Get number of races being shown to display -->
+    <span>Showing Next {{nextRaces.length}} Races </span>  
+    <span class="spacer"></span>
+    <button mat-button> Login </button>
+    <button mat-button [matMenuTriggerFor]="appMenu">
+       <mat-icon>settings</mat-icon>
+    </button>
+ </mat-toolbar>
+ <mat-menu #appMenu="matMenu">
+    <button mat-menu-item> Settings </button>
+    <button mat-menu-item> Help </button>
+    <button mat-menu-item> Log Out </button>
+ </mat-menu>
+ <mat-sidenav-container class="example-container">
+    <mat-sidenav #sidenav class="example-sidenav">
+       <mat-list class="list-nav">
+          <mat-list-item class="list-item">
+             <button mat-button>
+                <mat-icon>home</mat-icon>
+                <span class="source-name">Home</span>
+             </button>
+          </mat-list-item>
+          <mat-list-item class="list-item">  
+             <button mat-button> 
+             <img src="../assets/images/next_race_horse.JPG">  
+             <span class="source-name"> Next {{nextRaces.length}} Races</span>  
+             </button>
+          </mat-list-item>
+       </mat-list>
+    </mat-sidenav>
+    <mat-list >
+       <mat-list-item *ngFor="let nextRace of nextRaces">
+          <div *ngIf="nextRace.EventType.EventTypeID == 1"><img src="../assets/images/next_race_horse.JPG"></div>
+          <div *ngIf="nextRace.EventType.EventTypeID == 2"><img src="../assets/images/next_race_trots.JPG"></div>
+          <div *ngIf="nextRace.EventType.EventTypeID == 3"><img src="../assets/images/next_race_greyhound.JPG"></div>
+          <mat-list class="next-item-sub-list" dense>
+             <mat-list-item>
+                <div class="event-name">
+                   {{nextRace.EventName}}
+                </div>
+             </mat-list-item>
+             <mat-list-item>
+                <div class="venue">
+                   {{nextRace.Venue.Venue}}
+                </div>
+             </mat-list-item>
+          </mat-list>
+          <span class="spacer"></span>
+          <div class="advertised-start-time">
+             {{nextRace.AdvertisedStartTime | date: 'hh.mm'}}
           </div>
-        </mat-list-item>
-        <mat-list-item>
-          <div class="venue">
-            {{nextRace.Venue.Venue}}
-          </div>
-        </mat-list-item>              
-      </mat-list>  
-        
-        <span class="example-spacer"></span>
-        <div class="start-time">
-            {{nextRace.AdvertisedStartTime | date: 'hh.mm'}}
-        </div>
-        <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
-             
-  </mat-list-item>
-  <mat-divider></mat-divider>
- </mat-list>
-
-<router-outlet></router-outlet>
+          <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
+       </mat-list-item>
+       <mat-divider></mat-divider>
+    </mat-list>
+ </mat-sidenav-container>
+ <router-outlet></router-outlet>
