@@ -10,6 +10,7 @@ import { retry, catchError } from 'rxjs/operators';
 export class BetEasyApiService {
 
   constructor(private http: HttpClient) { }
+  
   // Get list of next few races
   getNextToJump() {
     return this.http.get<NextToJumpResponse>('https://s3-ap-southeast-2.amazonaws.com/bet-easy-code-challenge/next-to-jump')
@@ -18,7 +19,6 @@ export class BetEasyApiService {
       catchError(this.handleError)
     );
    }
-
    // Error handling for API
   handleError(error) {
     let errorMessage = '';
