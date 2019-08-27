@@ -9,6 +9,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
     *   npm install 
     *   ng serve
 3. Navigate to http://localhost:4200 in the browser.
+4. Implementaion screenhot is also provided.
 
 ## Development server
 
